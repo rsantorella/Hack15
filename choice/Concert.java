@@ -1,4 +1,4 @@
-public class typicalNight implements Concert 
+public class Concert implements ChoiceEvent 
 {
 
     String[] event = new String[] {"There's a concert tonight..."};
