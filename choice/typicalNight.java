@@ -1,4 +1,4 @@
-import java.util.random
+
 public class typicalNight implements ChoiceEvent{
 	
 	String[]event=new String[]{"It is a typical week-night..."};
@@ -28,7 +28,7 @@ public class typicalNight implements ChoiceEvent{
 				break;
 			case "watch netflix":
 				incrementing = new String[0];
-				decrementing = new String[]{"product", "gpa}"}
+				decrementing = new String[]{"product", "gpa}"};
 				break;
 			case "do laundry":
 				incrementing = new String[]{"product","commonSense"};
@@ -63,7 +63,7 @@ public class typicalNight implements ChoiceEvent{
 				decrementing = new String[]{"product"};
 				break;
 			case "go to sleep early":
-				incrementing = new String[]{"health"}
+				incrementing = new String[]{"health"};
 				decrementing = new String[]{"social"};
 				break;
 			case "check social media":
@@ -80,7 +80,7 @@ public class typicalNight implements ChoiceEvent{
 				break;
 		    
 		}
-		return {new String[0],incrementing,decrementing};
+		return new String[][]{new String[0],incrementing,decrementing};
 	}
 	
 	/**
@@ -90,7 +90,7 @@ public class typicalNight implements ChoiceEvent{
 	public String[] getChoices(){
 		String[] s=new String[4];
 		for(int i= 0; i<4; i++){
-			int index=Math.random()*choices.length;
+			int index=(int)(Math.random()*choices.length);
 			s[i]=choices[index];
 			for(int c=0;c<i;c++){
 				if(choices[c].equals(choices[i]))
