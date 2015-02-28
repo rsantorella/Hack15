@@ -1,8 +1,8 @@
 import java.util.random
 public class typicalNight implements ChoiceEvent{
 	
-	String[]event={"It is a typical week-night..."}
-	String[]choices{"study", "hang out with friends",
+	String[]event=new String[]{"It is a typical week-night..."};
+	String[]choices=new String[]{"study", "hang out with friends",
 		"watch netflix","do laundry", "clean room","party", "workout", "eat", 
 		"go to c-store", "shower", "play games", "go to sleep early", "check social media", 
 		"call parents"};
@@ -19,64 +19,64 @@ public class typicalNight implements ChoiceEvent{
 		switch (choice)
 		{
 			case "study":
-				incrementing = {"product", "gpa"};
-				decrementing = [0];
+				incrementing = new String[]{"product", "gpa"};
+				decrementing = new String[0];
 				break;
 			case "hang out with friends":
-				incrementing = {"social"};
-				decrementing = {"product"};
+				incrementing = new String[]{"social"};
+				decrementing = new String[]{"product"};
 				break;
 			case "watch netflix":
-				incrementing = [0];
-				decrementing = {"product", "gpa}"}
+				incrementing = new String[0];
+				decrementing = new String[]{"product", "gpa}"}
 				break;
 			case "do laundry":
-				incrementing = {"product","commonSense"};
-				decrementing = [0];
+				incrementing = new String[]{"product","commonSense"};
+				decrementing = new String[0];
 				break;
 			case "clean room":
-				incrementing = {"product", "commonSense"};
-				decrementing = {};
+				incrementing = new String[]{"product", "commonSense"};
+				decrementing = new String[]{};
 				break;
 			case "party":
-				incrementing = {"social"};
-				decrementing = {"product", "health"};
+				incrementing = new String[]{"social"};
+				decrementing = new String[]{"product", "health"};
 				break;
 			case "workout":
-				incrementing = {"athletic","health", "product"};
-				decrementing = {};
+				incrementing = new String[]{"athletic","health", "product"};
+				decrementing = new String[]{};
 				break;
 			case "eat":
-				incrementing = {"health"};
-				decrementing = {"product"};
+				incrementing = new String[]{"health"};
+				decrementing = new String[]{"product"};
 				break;
 			case "go to c-store":
-				incrementing = {};
-				decrementing = {"commonSense"};
+				incrementing = new String[]{};
+				decrementing = new String[]{"commonSense"};
 				break;
 			case "shower":
-				incrementing = {};
-				decrementing = {};
+				incrementing = new String[]{};
+				decrementing = new String[]{};
 				break;
 			case "play games":
-				incrementing = {"social"};
-				decrementing = {"product"};
+				incrementing = new String[]{"social"};
+				decrementing = new String[]{"product"};
 				break;
 			case "go to sleep early":
-				incrementing = {"health"}
-				decrementing = {"social"};
+				incrementing = new String[]{"health"}
+				decrementing = new String[]{"social"};
 				break;
 			case "check social media":
-				incrementing = {"social"};
-				decrementing = {"product","gpa"};
+				incrementing = new String[]{"social"};
+				decrementing = new String[]{"product","gpa"};
 			    break;
 			case "call parents":
-				incrementing = {};
-				decrementing = {};
+				incrementing = new String[]{};
+				decrementing = new String[]{};
 				break;
 		    default:
-		    	incrementing = {"error"};
-				decrementing = {"error"};
+		    	incrementing = new String[]{"error"};
+				decrementing = new String[]{"error"};
 				break;
 		    
 		}
@@ -102,18 +102,19 @@ public class typicalNight implements ChoiceEvent{
 	}
 	
 	public static void main(String[]args){
-		String[] c=getChoices();
-		for(int i=0; i<c.length(); i++){
+		typicalNight n=new typicalNight();
+		String[] c=n.getChoices();
+		for(int i=0; i<c.length; i++){
 			System.out.println(" "+ c[i]+ " ");
 		}
-		String[][]o=getOutcome(c[1]);
+		String[][]o=n.getOutcome(c[1]);
 		System.out.println("decrement:");
 
-		for(int i=0; i<o[1].length(); i++){
+		for(int i=0; i<o[1].length; i++){
 			System.out.println(" "+ c[i]+ " ");
 		}
 		System.out.println("decrement:");
-		for(int i=0; i<o[2].length(); i++){
+		for(int i=0; i<o[2].length; i++){
 			System.out.println(" "+ c[i]+ " ");
 		}
 	}
