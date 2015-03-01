@@ -30,6 +30,48 @@ public class Player {
 		setGpa(4.0);
 	}
 
+	public void updateStats(String[]increment,String[] decrement){
+		for(int i=0; i<increment;i++){
+			String trait=increment[i];
+			if(trait.equals("health"))
+				health+=5;
+			else if(trait.equals("commonSense")){
+				commonSense+=5;
+			}
+			else if(trait.equals("social")){
+				social+=5;
+			}else if(trait.equals("product")){
+				product+=5;
+			}else if(trait.equals("athletic")){
+				athletic+=5;
+			}else if(trait.equals("gpa")){
+				if(gpa<4.0)
+					gpa+=0.1;
+			}else
+				//error
+		}
+		
+		for(int i=0; i<decrement;i++){
+			String trait=decrement[i];
+			if(trait.equals("health"))
+				health-=5;
+			else if(trait.equals("commonSense")){
+				commonSense-=5;
+			}
+			else if(trait.equals("social")){
+				social-=5;
+			}else if(trait.equals("product")){
+				product-=5;
+			}else if(trait.equals("athletic")){
+				athletic-=5;
+			}else if(trait.equals("gpa")){
+				if(gpa>0.0)
+					gpa-=0.1;
+			}else
+				//error
+		}
+	}
+	
 	public String getName() {
 		return name;
 	}
