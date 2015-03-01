@@ -4,13 +4,13 @@
  * the player can choose from, and possible outcomes of the situation.
  *
  */
-public interface ChoiceEvent {
+public interface ChoiceEvent extends RandomEvent {
 	
 	/**
 	 * Takes the player's choice and trait stats into account to 
 	 * determine the outcome of the event.
-	 * @return String[][] of the outcome of the user's choice, traits to
-	 * increment and decrement
+	 * @return String[][] of the outcome,the user's traits to
+	 * increment and decrement(3 string[])
 	 */
 	public String[][] getOutcome(String choice);
 	
@@ -19,6 +19,11 @@ public interface ChoiceEvent {
 	 * @return choices the player has.
 	 */
 	public String[] getChoices();
+	
+	/**
+	 * returns description of the event
+	 */
+	public String getEvent();
 	 
 	
 }
